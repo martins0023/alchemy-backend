@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const scaleRoutes = require('./routes/scaleRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/scale', scaleRoutes);
+app.use('/api/contact', contactRoutes);
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
